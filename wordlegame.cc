@@ -12,14 +12,16 @@ const int num_of_guesses = 8;
 
 void toUpperCase(std::string &input){
 
-    std::transform(input.begin(),input.end(), input.begin(), [](unsigned char c){return std::toupper(c);});
+    std::transform(input.begin(),input.end(), input.begin(), [](unsigned char c)
+    {return std::toupper(c);}); 
+    //the function takes in a character and returns the uppercase version of the character
 }
 
 
 
 std::string getBibleWord(){
 
-    //TODO get a ramdon word from the bible
+//TODO get a ramdon word from the bible
     return "ready"; 
 
 }
@@ -27,10 +29,23 @@ std::string getBibleWord(){
 bool isValidWord(std::string word) //function to check if the word is valid
 {
     return word.length() == word_lenght && word.find_first_not_of("abcdefghijklmnopqrstuvwxyz") == std::string::npos;
-//find_first_not_of returns std::string::npos if no character is found outside the range of the alphabet
-//if there is character outside the range of the alphabet, the function returns the position of the first character that is not in the range of the alphabet
+}
+
+void markMatches(std::vector<std::vector<int>> &matches, std::string guess, std::string secret_word){
+
+
+    for (int =0;i < guess.word(); i++
+    {
+
+        matches[currentGuessNumber][i] = not_match;
+
+    } 
+    
+    for 
 
 }
+
+
 
 int main (){
 
@@ -46,10 +61,20 @@ int main (){
 
         do{ //the do-while loops executes the code block at least once and then it will repeat the loop as long as the condition is true
             
+            std::cout << "Please enter your guess (word length should only be 5 words)"
+            std::getline(std::cin,input)
+            toUpperCase(input);
     
-        } while (input != "Q" && !isValid(input))
+        } while (input != "Q" && !isValid(input)) //the loop will continue to execute as long as the input is not equal to Q and the input is not valid
+        
+        if (input == "Q"){
+            std::cout << "Quit game" std::endl;
+            break;
+        
+        }
        
-        currentGuessNumber++;
+        guesses[currentGuessNumber] = input;
+
 
     }
 
